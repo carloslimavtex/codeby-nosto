@@ -1,0 +1,7 @@
+{
+  "section": "orders",
+  "path": "/admin/nosto",
+  "icon": "extensions-ic",
+  "titleId": "admin/nosto.navigation.label",
+  "searchKeyWordsHelpers": "admin/nosto.navigation.keywords"
+}

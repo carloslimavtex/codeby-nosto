@@ -1,0 +1,6 @@
+{
+  "admin.app.nosto": {
+    "component": "admin/Main",
+    "path": "/admin/app/nosto"
+  }
+}

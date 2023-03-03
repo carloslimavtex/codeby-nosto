@@ -1,0 +1,38 @@
+<script>
+  (function() {
+    const appKey = "{{settings.appKey}}";
+    const host = undefined;
+    if (!appKey) {
+      console.error(
+        "Warning: No Nosto app key is defined. Please configure it in the apps admin."
+      );
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "//" + (host || "connect.nosto.com") + "/include/" + appKey;
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.nostojs = window.nostojs || (cb => {
+      (window.nostojs.q = window.nostojs.q || []).push(cb);
+    });
+
+    nostojs(api => api.setAutoLoad(false));
+
+    window.Nosto = {
+      addSkuToCart: () => {
+        return new Promise((_, reject) => {
+          reject(new Error("Nosto cart not started!"));
+        });
+      },
+      addMultipleSkuToCart: () => {
+        return new Promise((_, reject) => {
+          reject(new Error("Nosto cart not started!"));
+        });
+      }
+    };
+    
+  })();
+</script>

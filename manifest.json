@@ -1,0 +1,118 @@
+{
+  "name": "nosto-integration",
+  "vendor": "nostopartnerglobal",
+  "version": "0.0.0",
+  "title": "Nosto",
+  "description": "Nosto Desc",
+  "mustUpdateAt": "2018-01-04",
+  "categories": [],
+  "builders": {
+    "docs": "0.x",
+    "react": "3.x",
+    "pixel": "0.x",
+    "store": "0.x",
+    "node": "6.x"
+  },
+  "credentialType": "absolute",
+  "policies": [
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "api.nosto.com",
+        "path": "/v1/graphql"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "api.vtex.com",
+        "path": "/api/dataentities/*"
+      }
+    },
+    {
+      "name": "colossus-fire-event"
+    },
+    {
+      "name": "colossus-write-logs"
+    },
+    {
+      "name": "vbase-read-write"
+    },
+    {
+      "name": "POWER_USER_DS"
+    },
+    {
+      "name": "ADMIN_DS"
+    },
+    {
+      "name": "vtex.catalog-graphql:resolve-graphql"
+    }
+  ],
+  "settingsSchema": {
+    "title": "Nosto",
+    "type": "object",
+    "properties": {
+      "appKey": {
+        "title": "Nosto App Key",
+        "description": "Enter your App Key from Nosto Admin",
+        "type": "string"
+      },
+      "apiKey": {
+        "title": "Nosto API Key",
+        "description": "Enter your API Key from Nosto Admin",
+        "type": "string"
+      },
+      "domain": {
+        "title": "Domain",
+        "description": "Domain used by Nosto without the https:// or /anything. e.g. example.com",
+        "type": "string"
+      },
+      "currency": {
+        "title": "Currency",
+        "description": "What currency should be sent to Nosto? USD?",
+        "type": "string"
+      },
+      "workspace": {
+        "title": "Workspace",
+        "description": "In what workspaces should nosto backend run? Empty for production",
+        "type": "string"
+      },
+      "targetWorkspace": {
+        "title": "Target workspace",
+        "description": "What workspace should be targeted on links sent to nosto? This will add ?workspace=TARGET for every link unless empty",
+        "type": "string"
+      }
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema",
+  "dependencies": {
+    "vtex.store": "2.x",
+    "vtex.product-context": "0.x",
+    "vtex.search-page-context": "0.x",
+    "vtex.pixel-interfaces": "1.x",
+    "vtex.order-manager": "0.x",
+    "vtex.order-items": "0.x",
+    "vtex.product-list": "0.x",
+    "vtex.session-client": "1.x",
+    "vtex.order-placed": "2.x",
+    "vtex.order-placed-graphql": "1.x",
+    "vtex.catalog-api-proxy": "0.x",
+    "vtex.catalog-graphql": "1.x"
+  },
+  "billingOptions": {
+    "termsURL": "https://compliance.vtex.com/gdpr/policies/vtex-privacy-policy",
+    "support": {
+      "url": "https://help-tickets.vtex.com/en/support?app=vtex.wish-list"
+    },
+    "free": true,
+    "type": "free",
+    "availableCountries": ["*"]
+  }
+}

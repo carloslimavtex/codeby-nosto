@@ -1,0 +1,88 @@
+{
+  "memory": 256,
+  "ttl": 10,
+  "timeout": 30,
+  "minReplicas": 1,
+  "maxReplicas": 1,
+  "workers": 1,
+  "events": {
+    "broadcasterNotification": {
+      "keys": ["broadcaster.notification"]
+    },
+    "verifyAllProductsInVtex": {
+      "keys": ["nosto.verify-all-products-in-vtex"]
+    },
+    "verifyProductInVtex": {
+      "keys": ["nosto.verify-product-in-vtex"]
+    },
+    "sendAllProducts": {
+      "keys": ["nosto.send-all-products"]
+    },
+    "sendProduct": {
+      "keys": ["nosto.send-product"]
+    },
+    "verifyUpdateOfAllProducts": {
+      "keys": ["nosto.verify-update-of-all-products"]
+    },
+    "verifyUpdateOfProduct": {
+      "keys": ["nosto.verify-update-of-product"]
+    },
+    "nostoEventsWatcher": {
+      "keys": ["nosto.nosto-events-watcher"]
+    }
+  },
+  "routes": {
+    "sendAllProducts": {
+      "path": "/nosto/_v/send-all-products",
+      "public": true,
+      "access": "authorized",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": ["get"],
+          "principals": ["vrn:apps:*:*:*:app/vtex.scheduler@*"]
+        }
+      ]
+    },
+    "sendProduct": {
+      "path": "/nosto/_v/send-product/:productId",
+      "public": true
+    },
+    "verifyAllProductsInVtex": {
+      "path": "/nosto/_v/verify-all-products-in-vtex/:scanTime",
+      "public": true
+    },
+    "addProducts": {
+      "path": "/nosto/_v/add-products/:productIds",
+      "public": true
+    },
+    "addNotification": {
+      "path": "/nosto/_v/add-notification/:IdSku/:DateModified",
+      "public": true
+    },
+    "verifyUpdateOfAllProducts": {
+      "path": "/nosto/_v/verify-update-of-all-products",
+      "public": true,
+      "access": "authorized",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": ["get"],
+          "principals": ["vrn:apps:*:*:*:app/vtex.scheduler@*"]
+        }
+      ]
+    },
+    "verifyUpdateOfProduct": {
+      "path": "/nosto/_v/verify-update-of-product/:productId",
+      "public": true
+    },
+    "eventsWatcher": {
+      "path": "/nosto/_v/events-watcher",
+      "public": true
+    },
+    "test": {
+      "path": "/nosto/_v/test",
+      "public": true
+    }
+  }
+}

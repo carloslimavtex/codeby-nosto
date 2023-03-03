@@ -1,0 +1,57 @@
+{
+  "nosto-placement": {
+    "component": "Placement",
+    "render": "client"
+  },
+
+  "nosto-cart": {
+    "component": "ExternalCart",
+    "render": "client"
+  },
+
+  "nosto-search-conditional": {
+    "component": "SearchConditional",
+    "render": "client",
+    "composition": "children"
+  },
+
+  "nosto-front-page-client": {
+    "component": "FrontPageClient",
+    "render": "client"
+  },
+
+  "nosto-product-page-server": {
+    "component": "ProductPageServer",
+    "render": "server"
+  },
+
+  "nosto-product-page-client": {
+    "component": "ProductPageClient",
+    "render": "client"
+  },
+
+  "nosto-search-page-client": {
+    "component": "SearchPageClient",
+    "render": "client"
+  },
+
+  "nosto-not-found-page-client": {
+    "component": "NotFoundPageClient",
+    "render": "client"
+  },
+
+  "nosto-other-page-client": {
+    "component": "OtherPageClient",
+    "render": "client"
+  },
+
+  "nosto-order-page-client": {
+    "component": "OrderPageClient",
+    "render": "client"
+  },
+
+  "order-placed.nosto": {
+    "component": "OrderPageClient",
+    "render": "client"
+  }
+}
